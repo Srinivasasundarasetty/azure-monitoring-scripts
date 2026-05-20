@@ -1,0 +1,5 @@
+Perf
+| where ObjectName == "Processor"
+| where CounterName == "% Processor Time"
+| summarize AvgCPU = avg(CounterValue) by Computer
+| order by AvgCPU desc
